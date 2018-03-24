@@ -8,12 +8,14 @@
       <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+      <link rel="stylesheet" href="{% static 'css/blog.css' %}">
       <title>Django Girls blog</title>
     </head>
     <!-- the body of the page -->
     <body>
       <!-- div classe for page header -->
       <div class="page-header">
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
        <h1><a href="/">Django Girls Blog</a></h1>
    </div>
    <!-- making a container -->
