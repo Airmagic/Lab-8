@@ -1,22 +1,36 @@
+<!-- this load a the css file -->
+{% load staticfiles %}
 <!-- making this a html page -->
 <html>
     <!-- Header for the page -->
     <head>
-        <title>Django Girls blog</title>
+      <!-- bootstrap links for formating -->
+      <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+      <title>Django Girls blog</title>
     </head>
     <!-- the body of the page -->
     <body>
-        <!-- making a div for the page -->
-        <div>
-          <h1><a href="/">Django Girls Blog</a></h1>
-        </div>
-
-        {% for post in posts %}
-            <div>
-                <p>published: {{ post.published_date }}</p>
-                <h1><a href="">{{ post.title }}</a></h1>
-                <p>{{ post.text|linebreaksbr }}</p>
+      <!-- making a container -->
+      <div class="content container">
+        <!-- making a row -->
+        <div class="row">
+          <!-- making a column -->
+            <div class="col-md-8">
+                {% for post in posts %}
+                    <!-- making a div class post -->
+                    <div class="post">
+                      <!-- making a div class date -->
+                        <div class="date">
+                            <p>published: {{ post.published_date }}</p>
+                        </div>
+                        <h1><a href="">{{ post.title }}</a></h1>
+                        <p>{{ post.text|linebreaksbr }}</p>
+                    </div>
+                {% endfor %}
             </div>
-        {% endfor %}
+        </div>
+      </div>
     </body>
 </html>
