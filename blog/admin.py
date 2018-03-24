@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Post
 
-# Register your models here.
+# changed this code to make it work for blogging
+admin.site.register(Post)
